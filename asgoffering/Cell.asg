@@ -1,0 +1,37 @@
+asg Cell {
+	// TODO Auto-generated stub
+	adt = Cell.java
+	impl = Cell.java
+	group Cell {
+		tests toString {
+			stringtest: .toString() == "<00000100>"
+		}
+		tests get {
+			gettest: .get() == "<00000100>"
+		}
+		tests isValid {
+			isvalidString: .isValid("10101010") == true
+			isvalidInt: .isValid(10101010) == true
+			isvalidNull: .isValid(null) == false
+		}
+
+		tests set {
+			isbinarytrue: .set("10101010") == true
+			isbinaryfalse: .set("101010") == false
+			isbinaryNull: .set(null) == false
+		}
+
+		tests toBinary {
+			toBinaryfalse: .toBinary(20000) == "OVERFLOW"
+			toBinaryTrue: .toBinary(130) == "10000010"
+			toBinarynull: .toBinary(null) == -1
+
+		}
+
+		tests toDecimal {
+			toDecimaltrue: .toDecimal("10101010") == 170
+			toDecimalfalse: .toDecimal("1010101003") == -1
+
+		}
+	}
+}

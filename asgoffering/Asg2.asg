@@ -1,0 +1,16 @@
+	asg Asg2 {
+	// TODO Auto-generated stub
+	adt = Memory.java
+	impl = Memory.java
+	group Memory {
+		tests toString {
+			stringtest: <10,11,12>.toString() == "<10,11,12>" // states need to be in binary
+		}
+		tests store {
+			storetest: .store(0, 10) == true // storing in index 0 the number 10, converts it to decimal but returns true
+		}
+		tests fetch {
+			fetch: <10,11,12>.fetch(0) == "00001010" // state needs to have a binary number stored in index 0 
+		}
+	}
+}

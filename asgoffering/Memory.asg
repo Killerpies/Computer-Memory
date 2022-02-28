@@ -1,0 +1,18 @@
+asg Memory {
+	// TODO Auto-generated stub
+	adt = Memory.java
+	impl = Memory.java
+	group Cell {
+		tests fetch {
+			fetchTest: .fetch(0) == "00000100"
+			fetchhighindex: .fetch(10000) == "BADINDEX"
+		}
+		tests toString {
+			stringtest: .toString() == "<00000100>"
+		}
+		tests store {
+			storetest: .store(0,16) == true
+			storefalse: .store(0,1039405840) == false
+		}
+	}
+}
